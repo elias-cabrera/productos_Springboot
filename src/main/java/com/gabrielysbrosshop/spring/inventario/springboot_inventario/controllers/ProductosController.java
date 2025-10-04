@@ -13,14 +13,7 @@ public class ProductosController {
     @GetMapping("/productos")
 
     public String info(Model model) {
-        /*
-         * model.addAttribute(attributeName:"Titulo",
-         * attributeValue:"¡Biennvenido a Gabrielys Bros Shop!");
-         */
-        /*
-         * model.addAttribute(attributeName:"Servidor",
-         * attributeValue:"Gabrielys Bros Shop");
-         */
+        model.addAttribute("Titulo", "¡Bienvenido a Gabriely's Bros Shop!");
 
         return "productos";
 
