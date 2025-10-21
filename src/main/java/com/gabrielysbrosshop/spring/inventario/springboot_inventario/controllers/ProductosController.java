@@ -25,13 +25,14 @@ public class ProductosController {
     }
 
     /*
-     * Médoto Post ---> Insertar
+     * Método Post ---> Insertar
      */
     @PostMapping("/agregarproductos") /* Endpoint: /agregarprodcutos [POST] */
     /*
      * public ResponseEntity<Producto> agregarProducto(@RequestBody Producto
      * producto){
-     * System.out.println("Producto recibido: " + producto.getNombre() + ", Precio: " +
+     * System.out.println("Producto recibido: " + producto.getNombre() +
+     * ", Precio: " +
      * producto.getPrecio());
      */
     public ResponseEntity<Producto> agregarProducto(@RequestBody Producto productorecibido) {

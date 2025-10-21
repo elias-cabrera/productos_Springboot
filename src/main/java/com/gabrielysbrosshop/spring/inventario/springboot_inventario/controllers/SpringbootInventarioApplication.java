@@ -1,4 +1,4 @@
-package com.gabrielysbrosshop.spring.inventario.springboot_inventario;
+package com.gabrielysbrosshop.spring.inventario.springboot_inventario.controllers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
