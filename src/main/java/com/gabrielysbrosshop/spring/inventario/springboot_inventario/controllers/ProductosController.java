@@ -35,23 +35,37 @@ public class ProductosController {
      * ", Precio: " +
      * producto.getPrecio());
      */
-    public ResponseEntity<Producto> agregarProducto(@RequestBody Producto productorecibido) {
-        System.out.println(
-                "Producto recibido: " + productorecibido.getNombre() + ", Precio: " + productorecibido.getPrecio());
-        // Aquí podrías agregar lógica para guardar el producto en una base de datos
-        Producto spiderman = new Producto();
-        spiderman.setId(200L);
-        spiderman.setNombre("Spiderman");
-        spiderman.setPrecio(productorecibido.getPrecio());
-        /*
-         * producto.setId(99L);
-         * producto.setPrecio(productorecibido.getPrecio());
-         * 
-         * 
-         * return new ResponseEntity<>(producto, HttpStatus.CREATED);
-         */
-        return new ResponseEntity<>(spiderman, HttpStatus.CREATED);
+
+    /*
+     * public ResponseEntity<Producto> agregarProducto(@RequestBody Producto
+     * productorecibido) {
+     * System.out.println(
+     * "Producto recibido: " + productorecibido.getNombre() + ", Precio: " +
+     * productorecibido.getPrecio());
+     * // Aquí podrías agregar lógica para guardar el producto en una base de datos
+     * Producto spiderman = new Producto();
+     * spiderman.setId(200L);
+     * spiderman.setNombre("Spiderman");
+     * spiderman.setPrecio(productorecibido.getPrecio());
+     * /*
+     * producto.setId(99L);
+     * producto.setPrecio(productorecibido.getPrecio());
+     * 
+     * 
+     * return new ResponseEntity<>(producto, HttpStatus.CREATED);
+     */
+    /* return new ResponseEntity<>(spiderman, HttpStatus.CREATED); */
+    public ResponseEntity<Productos> agregarProductos(@RequestBody Productos productos) {
+        System.out.println("Producto recibido: " + productos.getNombre() + " Precio: " + productos.getPrecio() +
+                " Descripción: " + productos.getDescripcion() + " Cantidad en Stock: " + productos.getCantidadEnStock()
+                +
+                " Categoría: " + productos.getCategoria());
+        int result = Gabrielys_Bros_DB.guardarProductos(productos);
+        System.out.println("Filas insertadas: " + result);
+        return new ResponseEntity<>(productos, HttpStatus.CREATED);
+
     }
+
 }
 
 // Médoto Put ---> Actualizar
